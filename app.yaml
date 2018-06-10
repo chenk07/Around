@@ -1,2 +1,3 @@
-echo -e 'runtime: go\nenv: flex' > app.yaml
+runtime: go
+env: flex
 
