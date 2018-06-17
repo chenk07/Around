@@ -15,7 +15,7 @@ import (
 	"github.com/auth0/go-jwt-middleware"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
-	"cloud.google.com/go/bigtable"
+	//"cloud.google.com/go/bigtable"
 )
 
 type Location struct {
@@ -190,10 +190,11 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 
 	saveToES(p, id);
 
-	saveToBigTable(p, id)
+	//saveToBigTable(p, id)
 
 }
 
+/*
 func saveToBigTable(p *Post, id string) {
 	ctx := context.Background()
 	// you must update project name here
@@ -220,6 +221,7 @@ func saveToBigTable(p *Post, id string) {
 
 	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
 }
+*/
 
 func saveToGCS(ctx context.Context, r io.Reader, bucketName string, name string) (*storage.ObjectHandle, *storage.ObjectAttrs, error) {
 	client, err := storage.NewClient(ctx)
